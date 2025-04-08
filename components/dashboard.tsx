@@ -1,28 +1,44 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Calendar, Clock, TrendingUp, Award, MapPin } from "lucide-react"
-import RunForm from "./run-form"
-import RecentRuns from "./recent-runs"
-import RunStats from "./run-stats"
+import { useState } from 'react'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Calendar, Clock, TrendingUp, Award, MapPin } from 'lucide-react'
+import RunForm from './run-form'
+import RecentRuns from './recent-runs'
+import RunStats from './run-stats'
 
 export default function Dashboard() {
-  const [activeTab, setActiveTab] = useState("overview")
+  const [activeTab, setActiveTab] = useState('overview')
 
   return (
     <div className="container mx-auto py-6 px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Running Dashboard</h1>
-          <p className="text-gray-500 mt-1">Track your runs and monitor your progress</p>
+          <h1 className="text-2xl font-bold text-gray-900">
+            Running Dashboard Testing with prettier
+          </h1>
+          <p className="text-gray-500 mt-1">
+            Track your runs and monitor your progress
+          </p>
         </div>
-        <Button className="mt-4 md:mt-0 bg-emerald-500 hover:bg-emerald-600">Log New Run</Button>
+        <Button className="mt-4 md:mt-0 bg-emerald-500 hover:bg-emerald-600">
+          Log New Run
+        </Button>
       </div>
 
-      <Tabs defaultValue="overview" className="w-full" onValueChange={setActiveTab}>
+      <Tabs
+        defaultValue="overview"
+        className="w-full"
+        onValueChange={setActiveTab}
+      >
         <TabsList className="grid w-full grid-cols-3 mb-8">
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="log">Log Run</TabsTrigger>
@@ -100,7 +116,9 @@ export default function Dashboard() {
           <Card>
             <CardHeader>
               <CardTitle>Log Your Run</CardTitle>
-              <CardDescription>Record your latest running activity</CardDescription>
+              <CardDescription>
+                Record your latest running activity
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <RunForm />
